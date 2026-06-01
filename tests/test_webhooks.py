@@ -131,3 +131,53 @@ def test_duplicate_delivery_id_does_not_create_duplicate_rows(client, make_signa
 
     events = client.get("/events").json()
     assert len(events) == 1
+
+
+def test_jira_issue_created_event_is_accepted(client, monkeypatch):
+    monkeypatch.setenv("JIRA_WEBHOOK_TOKEN", "jira-secret")
+    from app.core.config import get_settings
+    get_settings.cache_clear()
+
+    payload = {
+        "timestamp": "2026-05-25T10:00:00Z",
+        "webhookEvent": "jira:issue_created",
+        "user": {"accountId": "jira-user-1", "displayName": "Jira User"},
+        "issue": {
+            "id": "10001",
+            "key": "PROJ-1",
+            "fields": {
+                "created": "2026-05-25T10:00:00Z",
+                "updated": "2026-05-25T10:05:00Z",
+                "project": {"id": "200", "key": "PROJ", "name": "Project"},
+                "issuetype": {"name": "Task"},
+                "status": {"name": "To Do"},
+                "priority": {"name": "Medium"},
+            },
+        },
+    }
+    response = client.post(
+        "/webhooks/jira?token=jira-secret",
+        headers={"Content-Type": "application/json"},
+        content=json.dumps(payload),
+    )
+    assert response.status_code == 200
+
+    events = client.get("/events").json()
+    assert len(events) == 1
+    assert events[0]["event_type"] == "jira:issue_created"
+    assert events[0]["repository_full_name"] == "jira/PROJ"
+    assert events[0]["actor_login"] == "jira-user-1"
+    assert events[0]["normalized_payload"]["source"] == "jira"
+
+
+def test_jira_token_mismatch_is_rejected(client, monkeypatch):
+    monkeypatch.setenv("JIRA_WEBHOOK_TOKEN", "jira-secret")
+    from app.core.config import get_settings
+    get_settings.cache_clear()
+
+    response = client.post(
+        "/webhooks/jira?token=wrong",
+        headers={"Content-Type": "application/json"},
+        content=json.dumps({"webhookEvent": "jira:issue_created"}),
+    )
+    assert response.status_code == 401

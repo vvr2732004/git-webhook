@@ -38,4 +38,5 @@ jobs:
         run: python -m pytest
 
       - name: Run something
-        run:  java -v
+        run:  java --version
+
