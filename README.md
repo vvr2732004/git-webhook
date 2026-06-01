@@ -148,3 +148,5 @@ The service deliberately avoids storing code, diffs, PR text, and comment text, 
 ## Validation Note
 
 This repository is used to generate safe webhook test traffic for the GitHub connector POC.
+
+For a second Jira sync test, this branch adds a minimal documentation-only change under `SCRUM-123`.
