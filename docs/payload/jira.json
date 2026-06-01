@@ -1,0 +1,46 @@
+[
+    {
+        "id": 37,
+        "delivery_id": "2ded06e9-0cc8-4def-bc42-b05ec408ce8e",
+        "event_type": "jira:issue_updated",
+        "action": "jira:issue_updated",
+        "repository_full_name": "jira/KAN",
+        "actor_login": "712020:b7c8076b-3e53-4a1f-baf7-7c77604041ec",
+        "actor_type": "User",
+        "is_bot": false,
+        "occurred_at": "2026-05-26T01:04:44.457000Z",
+        "received_at": "2026-05-26T01:04:45.410030Z",
+        "normalized_payload": {
+            "id": "2ded06e9-0cc8-4def-bc42-b05ec408ce8e",
+            "source": "jira",
+            "event_type": "jira:issue_updated",
+            "action": "jira:issue_updated",
+            "repository": {
+                "id": "10001",
+                "name": "KAN",
+                "full_name": "jira/KAN",
+                "private": null
+            },
+            "actor": {
+                "id": "712020:b7c8076b-3e53-4a1f-baf7-7c77604041ec",
+                "login": "712020:b7c8076b-3e53-4a1f-baf7-7c77604041ec",
+                "type": "User"
+            },
+            "occurred_at": "2026-05-26T06:34:44.457000Z",
+            "metadata": {
+                "issue_id": "10016",
+                "issue_key": "KAN-2",
+                "project_id": "10001",
+                "project_key": "KAN",
+                "project_name": "My Team",
+                "issue_type": "Task",
+                "status": "In Progress",
+                "priority": null,
+                "assignee": "712020:4c1f8909-b372-4bd4-9c33-7b06ce23b08d",
+                "reporter": "712020:b7c8076b-3e53-4a1f-baf7-7c77604041ec",
+                "created_at": "2026-05-22T13:01:35.633+0530",
+                "updated_at": "2026-05-26T12:04:44.457+0530"
+            }
+        },
+        "raw_payload": null
+    },

@@ -1,20 +1,26 @@
 {
-    "total_events": 20,
+    "total_events": 37,
     "events_by_type": {
         "create": 1,
+        "jira:issue_created": 1,
+        "jira:issue_updated": 4,
         "member": 2,
         "ping": 2,
-        "pull_request": 7,
-        "push": 8
+        "pull_request": 9,
+        "push": 9,
+        "user_created": 3,
+        "user_updated": 6
     },
     "events_by_repository": {
+        "jira/KAN": 5,
+        "jira/unknown": 9,
         "vvr273/blogging_backend": 1,
-        "vvr273/git-webhook": 19
+        "vvr273/git-webhook": 22
     },
     "bot_events": 0,
-    "human_events": 20,
-    "pull_requests_opened": 3,
-    "pull_requests_merged": 2,
-    "pushes": 8,
+    "human_events": 37,
+    "pull_requests_opened": 4,
+    "pull_requests_merged": 3,
+    "pushes": 9,
     "workflow_runs_completed": 0
 }
