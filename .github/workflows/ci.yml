@@ -36,3 +36,6 @@ jobs:
 
       - name: Run tests
         run: python -m pytest
+
+      - name: Run something
+        run:  java -v

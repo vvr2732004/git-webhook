@@ -9,6 +9,11 @@ __pycache__/
 *.sqlite
 *.sqlite3
 *.egg-info/
-/reports
+
+reports/events.json
+reports/dashboard.html
+reports/summary.json
 .codex/
 .agents/
+reports/
+.playwright-mcp/
