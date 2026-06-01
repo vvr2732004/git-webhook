@@ -150,3 +150,4 @@ The service deliberately avoids storing code, diffs, PR text, and comment text, 
 This repository is used to generate safe webhook test traffic for the GitHub connector POC.
 
 For Jira linkage verification, use Jira issue keys in branch names, commit messages, and pull request titles such as `SCRUM-123`.
+For a second Jira sync test, this branch adds a minimal documentation-only change under `SCRUM-123`.
