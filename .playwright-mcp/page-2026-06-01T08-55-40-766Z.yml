@@ -1,0 +1,249 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - link "Skip to content" [ref=e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=e6]:
+      - heading "Navigation Menu" [level=2] [ref=e7]
+      - generic [ref=e9]:
+        - button "Toggle navigation" [ref=e11] [cursor=pointer]
+        - link "Homepage" [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img [ref=e18]
+        - generic [ref=e20]:
+          - link "Sign in" [ref=e21] [cursor=pointer]:
+            - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fvvr2732004%2Fgit-webhook%2Fcommit%2F3017d14
+          - button "Appearance settings" [ref=e24] [cursor=pointer]:
+            - img
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e32]:
+          - img [ref=e33]
+          - link "vvr2732004" [ref=e36] [cursor=pointer]:
+            - /url: /vvr2732004
+          - generic [ref=e37]: /
+          - strong [ref=e38]:
+            - link "git-webhook" [ref=e39] [cursor=pointer]:
+              - /url: /vvr2732004/git-webhook
+          - generic [ref=e40]: Public
+        - generic [ref=e41]:
+          - list:
+            - listitem [ref=e42]:
+              - link "You must be signed in to change notification settings" [ref=e43] [cursor=pointer]:
+                - /url: /login?return_to=%2Fvvr2732004%2Fgit-webhook
+                - img [ref=e44]
+                - text: Notifications
+            - listitem [ref=e46]:
+              - link "Fork 0" [ref=e47] [cursor=pointer]:
+                - /url: /login?return_to=%2Fvvr2732004%2Fgit-webhook
+                - img [ref=e48]
+                - text: Fork
+                - generic "0" [ref=e50]
+            - listitem [ref=e51]:
+              - link "You must be signed in to star a repository" [ref=e53] [cursor=pointer]:
+                - /url: /login?return_to=%2Fvvr2732004%2Fgit-webhook
+                - img [ref=e54]
+                - text: Star
+                - generic "0 users starred this repository" [ref=e56]: "0"
+      - navigation "Repository" [ref=e57]:
+        - list [ref=e58]:
+          - listitem [ref=e59]:
+            - link "Code" [ref=e60] [cursor=pointer]:
+              - /url: /vvr2732004/git-webhook
+              - img [ref=e61]
+              - generic [ref=e63]: Code
+          - listitem [ref=e64]:
+            - link "Issues" [ref=e65] [cursor=pointer]:
+              - /url: /vvr2732004/git-webhook/issues
+              - img [ref=e66]
+              - generic [ref=e69]: Issues
+          - listitem [ref=e70]:
+            - link "Pull requests 3" [ref=e71] [cursor=pointer]:
+              - /url: /vvr2732004/git-webhook/pulls
+              - img [ref=e72]
+              - generic [ref=e74]: Pull requests
+              - generic "3" [ref=e75]
+          - listitem [ref=e76]:
+            - link "Actions" [ref=e77] [cursor=pointer]:
+              - /url: /vvr2732004/git-webhook/actions
+              - img [ref=e78]
+              - generic [ref=e80]: Actions
+          - listitem [ref=e81]:
+            - link "Projects" [ref=e82] [cursor=pointer]:
+              - /url: /vvr2732004/git-webhook/projects
+              - img [ref=e83]
+              - generic [ref=e85]: Projects
+          - listitem [ref=e86]
+          - listitem [ref=e87]
+        - button "Additional navigation options" [ref=e91] [cursor=pointer]:
+          - img
+    - generic [ref=e97]:
+      - generic [ref=e100]:
+        - heading "Commit 3017d14" [level=1] [ref=e102]
+        - tooltip "Browse the repository at this point in the history" [ref=e105]:
+          - link "Browse files" [ref=e106] [cursor=pointer]:
+            - /url: /vvr2732004/git-webhook/tree/3017d14a785ba9201914d49bb7ed8ae4a600044b
+            - generic [ref=e107]:
+              - generic:
+                - img
+              - generic [ref=e108]: Browse files
+        - generic [ref=e110]:
+          - generic [ref=e111]:
+            - generic [ref=e112]:
+              - link "vvr273" [ref=e113] [cursor=pointer]:
+                - /url: /vvr273
+                - img "vvr273" [ref=e114]
+              - link "commits by vvr273" [ref=e115] [cursor=pointer]:
+                - /url: /vvr2732004/git-webhook/commits?author=vvr273
+                - text: vvr273
+            - generic [ref=e116]: committed
+            - generic "Jun 1, 2026, 2:24 PM GMT+5:30" [ref=e117]: Jun 1, 2026now
+            - generic [ref=e324]: ·
+            - 'button "Status checks: failure" [ref=e325] [cursor=pointer]':
+              - generic [ref=e326]:
+                - generic:
+                  - img
+                - generic [ref=e327]: 0 / 2
+          - generic [ref=e119]:
+            - generic [ref=e122]: Add CI failure probe
+            - generic [ref=e123]:
+              - generic [ref=e125]:
+                - img [ref=e126]
+                - link "codex-ci-failure-probe" [ref=e329] [cursor=pointer]:
+                  - /url: /vvr2732004/git-webhook/compare/codex-ci-failure-probe
+              - generic [ref=e129]:
+                - text: 1 parent
+                - link "a9fd132" [ref=e130] [cursor=pointer]:
+                  - /url: /vvr2732004/git-webhook/commit/a9fd132bd799ba9df419f97f32fe9499e5e3aef1
+                - text: commit
+                - generic [ref=e131]: 3017d14
+                - button "Copy full SHA for 3017d14" [ref=e133] [cursor=pointer]:
+                  - img [ref=e134]
+            - generic [ref=e137]:
+              - paragraph [ref=e139]: 1 file changed
+              - generic [ref=e140]:
+                - generic [ref=e141]: "+5"
+                - generic [ref=e142]: "Lines changed: 5 additions & 0 deletions"
+      - generic [ref=e150]:
+        - generic [ref=e151]:
+          - generic [ref=e153]:
+            - heading "File tree" [level=2] [ref=e154]
+            - generic [ref=e155]:
+              - generic [ref=e156]:
+                - img [ref=e158]
+                - textbox "Filter files…" [ref=e160]
+              - button "Filter options" [ref=e162] [cursor=pointer]:
+                - img [ref=e163]
+            - tree "File Tree" [ref=e166]:
+              - treeitem "app" [expanded] [level=1] [ref=e167]:
+                - generic [ref=e168] [cursor=pointer]:
+                  - img [ref=e170]
+                  - generic [ref=e172]:
+                    - img [ref=e176]
+                    - generic [ref=e178]: app
+                - group "app" [ref=e179]:
+                  - treeitem "ci_failure_probe.py" [level=2] [ref=e180]:
+                    - generic [ref=e185] [cursor=pointer]:
+                      - img [ref=e188]
+                      - link "ci_failure_probe.py" [ref=e191]:
+                        - /url: "#diff-30f39032458f1337b1bf5a914701974ea411bf47a3e047eafc9f7639a6016990"
+          - slider "Draggable pane splitter" [ref=e193]
+        - generic [ref=e196]:
+          - generic [ref=e197]:
+            - generic [ref=e198]:
+              - button "Collapse file tree" [expanded] [ref=e200] [cursor=pointer]:
+                - img [ref=e201]
+              - generic [ref=e204]:
+                - generic [ref=e207]:
+                  - img [ref=e209]
+                  - textbox "Search within code" [ref=e211]
+                - button "Open diff view settings" [ref=e214] [cursor=pointer]:
+                  - img [ref=e215]
+            - region "‎app/ci_failure_probe.py‎" [ref=e218]:
+              - generic [ref=e220]:
+                - button "Collapse file" [ref=e222] [cursor=pointer]:
+                  - img [ref=e223]
+                - generic [ref=e225]:
+                  - heading "‎app/ci_failure_probe.py‎" [level=3] [ref=e226]:
+                    - link "‎app/ci_failure_probe.py‎" [ref=e227] [cursor=pointer]:
+                      - /url: "#diff-30f39032458f1337b1bf5a914701974ea411bf47a3e047eafc9f7639a6016990"
+                      - code [ref=e228]: ‎app/ci_failure_probe.py‎
+                  - button "Copy file name to clipboard" [ref=e229] [cursor=pointer]:
+                    - img [ref=e230]
+                - generic [ref=e233]:
+                  - generic [ref=e236]:
+                    - generic [ref=e237]: "+5"
+                    - generic [ref=e238]: "Lines changed: 5 additions & 0 deletions"
+                  - button "More options" [ref=e245] [cursor=pointer]:
+                    - img [ref=e246]
+              - 'grid "Diff for: app/ci_failure_probe.py" [ref=e249]':
+                - rowgroup [ref=e250]:
+                  - row "Original file line number Diff line number Diff line change" [ref=e251]:
+                    - columnheader "Original file line number" [ref=e252]
+                    - columnheader "Diff line number" [ref=e253]
+                    - columnheader "Diff line change" [ref=e254]
+                - rowgroup [ref=e259]:
+                  - row "@@ -0,0 +1,5 @@" [ref=e260]:
+                    - gridcell "@@ -0,0 +1,5 @@" [ref=e261]:
+                      - generic [ref=e262]:
+                        - img [ref=e264]
+                        - code [ref=e266]:
+                          - generic [ref=e267]: "@@ -0,0 +1,5 @@"
+                  - row "1 + import os" [ref=e268]:
+                    - gridcell [ref=e269] [cursor=pointer]:
+                      - code
+                    - gridcell "1" [ref=e270] [cursor=pointer]:
+                      - code [ref=e271]: "1"
+                    - gridcell "+ import os" [ref=e272]:
+                      - code [ref=e273]:
+                        - generic [ref=e274]: +
+                        - generic [ref=e275]: import os
+                  - row "2 +" [ref=e276]:
+                    - gridcell [ref=e277] [cursor=pointer]:
+                      - code
+                    - gridcell "2" [ref=e278] [cursor=pointer]:
+                      - code [ref=e279]: "2"
+                    - gridcell "+" [ref=e280]:
+                      - code:
+                        - generic [ref=e281]: +
+                  - row "3 +" [ref=e282]:
+                    - gridcell [ref=e283] [cursor=pointer]:
+                      - code
+                    - gridcell "3" [ref=e284] [cursor=pointer]:
+                      - code [ref=e285]: "3"
+                    - gridcell "+" [ref=e286]:
+                      - code:
+                        - generic [ref=e287]: +
+                  - row "4 + def ci_failure_probe() -> str:" [ref=e288]:
+                    - gridcell [ref=e289] [cursor=pointer]:
+                      - code
+                    - gridcell "4" [ref=e290] [cursor=pointer]:
+                      - code [ref=e291]: "4"
+                    - gridcell "+ def ci_failure_probe() -> str:" [ref=e292]:
+                      - code [ref=e293]:
+                        - generic [ref=e294]: +
+                        - generic [ref=e295]: "def ci_failure_probe() -> str:"
+                  - row "5 + return \"This file exists only to trigger a Ruff failure in CI.\"" [ref=e296]:
+                    - gridcell [ref=e297] [cursor=pointer]:
+                      - code
+                    - gridcell "5" [ref=e298] [cursor=pointer]:
+                      - code [ref=e299]: "5"
+                    - gridcell "+ return \"This file exists only to trigger a Ruff failure in CI.\"" [ref=e300]:
+                      - code [ref=e301]:
+                        - generic [ref=e302]: +
+                        - generic [ref=e303]: return "This file exists only to trigger a Ruff failure in CI."
+          - generic [ref=e304]:
+            - generic [ref=e305]:
+              - heading "0 commit comments" [level=2] [ref=e306]
+              - generic [ref=e307]:
+                - generic [ref=e308]: Comments
+                - generic [ref=e309]: "0"
+                - generic [ref=e310]: (0)
+            - generic [ref=e332]:
+              - img [ref=e333]
+              - generic [ref=e336]:
+                - text: Please
+                - link "sign in" [ref=e337] [cursor=pointer]:
+                  - /url: /login?return_to=https://github.com/vvr2732004/git-webhook/commit/3017d14
+                - text: to comment.
+          - img [ref=e321]
