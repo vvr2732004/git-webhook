@@ -6,6 +6,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     github_webhook_secret: str = Field(..., alias="GITHUB_WEBHOOK_SECRET")
+    jira_webhook_token: str | None = Field(None, alias="JIRA_WEBHOOK_TOKEN")
     database_url: str = Field("sqlite:///./github_webhooks.db", alias="DATABASE_URL")
     store_raw_payload: bool = Field(False, alias="STORE_RAW_PAYLOAD")
     log_level: str = Field("INFO", alias="LOG_LEVEL")
