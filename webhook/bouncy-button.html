@@ -16,21 +16,14 @@
         --button-mid: #ff8a00;
         --button-end: #ffd166;
         --button-shadow: #9f2a66;
-        --green-start: #34d399;
-        --green-mid: #22c55e;
-        --green-end: #15803d;
-        --green-shadow: #166534;
-        --blue-start: #60a5fa;
-        --blue-mid: #2563eb;
-        --blue-end: #1e3a8a;
-        --blue-shadow: #1d4ed8;
-        --custom-start: #fde68a;
-        --custom-mid: #f97316;
-        --custom-end: #7c2d12;
-        --custom-shadow: #c2410c;
-        --custom-glow-top: rgba(255, 255, 255, 0.42);
-        --custom-glow-side: rgba(255, 196, 120, 0.36);
-        --custom-glow-bottom: rgba(249, 115, 22, 0.28);
+        --toggle-start: #34d399;
+        --toggle-mid: #22c55e;
+        --toggle-end: #15803d;
+        --toggle-shadow: #166534;
+        --blue-toggle-start: #60a5fa;
+        --blue-toggle-mid: #2563eb;
+        --blue-toggle-end: #1e3a8a;
+        --blue-toggle-shadow: #1d4ed8;
         --text: #1f1147;
         --text-soft: #422f72;
       }
@@ -71,14 +64,6 @@
           linear-gradient(135deg, #dbeafe, #38bdf8 44%, #1d4ed8 72%, #172554);
       }
 
-      body.custom-mode {
-        background:
-          radial-gradient(circle at 18% 18%, var(--custom-glow-top), transparent 22%),
-          radial-gradient(circle at 82% 16%, var(--custom-glow-side), transparent 22%),
-          radial-gradient(circle at 70% 82%, var(--custom-glow-bottom), transparent 26%),
-          linear-gradient(135deg, var(--custom-start), var(--custom-mid) 48%, var(--custom-end));
-      }
-
       body::before,
       body::after {
         content: "";
@@ -106,7 +91,7 @@
       }
 
       .card {
-        width: min(92vw, 34rem);
+        width: min(90vw, 28rem);
         padding: 2.25rem;
         text-align: center;
         border: 1px solid rgba(255, 255, 255, 0.35);
@@ -121,15 +106,6 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
-      }
-
-      .custom-theme-row {
-        margin-top: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 0.85rem;
       }
 
       h1 {
@@ -148,8 +124,8 @@
       button {
         border: 0;
         border-radius: 999px;
-        padding: 1rem 2rem;
-        font-size: 1.02rem;
+        padding: 1rem 2.4rem;
+        font-size: 1.1rem;
         font-weight: 700;
         letter-spacing: 0.04em;
         color: #fffdf6;
@@ -176,60 +152,36 @@
       }
 
       .toggle-button {
-        background: linear-gradient(135deg, var(--green-start), var(--green-mid), var(--green-end));
+        background: linear-gradient(135deg, var(--toggle-start), var(--toggle-mid), var(--toggle-end));
         box-shadow:
-          0 0.6rem 0 var(--green-shadow),
+          0 0.6rem 0 var(--toggle-shadow),
           0 1rem 2rem rgba(21, 128, 61, 0.28);
         animation-duration: 1.9s;
       }
 
       .toggle-button:active {
         box-shadow:
-          0 0.18rem 0 var(--green-shadow),
+          0 0.18rem 0 var(--toggle-shadow),
           0 0.45rem 0.9rem rgba(21, 128, 61, 0.18);
       }
 
       .blue-toggle-button {
-        background: linear-gradient(135deg, var(--blue-start), var(--blue-mid), var(--blue-end));
+        background: linear-gradient(
+          135deg,
+          var(--blue-toggle-start),
+          var(--blue-toggle-mid),
+          var(--blue-toggle-end)
+        );
         box-shadow:
-          0 0.6rem 0 var(--blue-shadow),
+          0 0.6rem 0 var(--blue-toggle-shadow),
           0 1rem 2rem rgba(29, 78, 216, 0.28);
         animation-duration: 2.1s;
       }
 
       .blue-toggle-button:active {
         box-shadow:
-          0 0.18rem 0 var(--blue-shadow),
+          0 0.18rem 0 var(--blue-toggle-shadow),
           0 0.45rem 0.9rem rgba(29, 78, 216, 0.18);
-      }
-
-      .custom-toggle-button {
-        background: linear-gradient(135deg, var(--custom-start), var(--custom-mid), var(--custom-end));
-        box-shadow:
-          0 0.6rem 0 var(--custom-shadow),
-          0 1rem 2rem rgba(194, 65, 12, 0.28);
-        animation-duration: 2.3s;
-      }
-
-      .custom-toggle-button:active {
-        box-shadow:
-          0 0.18rem 0 var(--custom-shadow),
-          0 0.45rem 0.9rem rgba(194, 65, 12, 0.18);
-      }
-
-      .picker-label {
-        font-weight: 700;
-        color: var(--text-soft);
-      }
-
-      input[type="color"] {
-        width: 4.5rem;
-        height: 3rem;
-        border: 0;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.55);
-        cursor: pointer;
-        box-shadow: 0 0.6rem 1.25rem rgba(31, 17, 71, 0.14);
       }
 
       .status {
@@ -265,76 +217,25 @@
       <p>Colorful gradient prototype to test Jira issue to PR linking in this repository.</p>
       <div class="controls">
         <button id="bounceButton" type="button">Click Me</button>
-        <button class="toggle-button" id="greenThemeButton" type="button">Go Green</button>
-        <button class="blue-toggle-button" id="blueThemeButton" type="button">Go Blue</button>
-      </div>
-      <div class="custom-theme-row">
-        <label class="picker-label" for="customColorPicker">Pick a color</label>
-        <input id="customColorPicker" type="color" value="#f97316" />
-        <button class="custom-toggle-button" id="customThemeButton" type="button">Use My Color</button>
+        <button class="toggle-button" id="themeToggleButton" type="button">Go Green</button>
+        <button class="blue-toggle-button" id="blueThemeToggleButton" type="button">Go Blue</button>
       </div>
       <div class="status" id="status">Waiting for the first click.</div>
     </main>
     <script>
       const button = document.getElementById("bounceButton");
-      const greenThemeButton = document.getElementById("greenThemeButton");
-      const blueThemeButton = document.getElementById("blueThemeButton");
-      const customThemeButton = document.getElementById("customThemeButton");
-      const customColorPicker = document.getElementById("customColorPicker");
+      const themeToggleButton = document.getElementById("themeToggleButton");
+      const blueThemeToggleButton = document.getElementById("blueThemeToggleButton");
       const status = document.getElementById("status");
       let clickCount = 0;
       let activeTheme = "default";
-
-      function hexToRgb(hex) {
-        const normalized = hex.replace("#", "");
-        const value = normalized.length === 3
-          ? normalized.split("").map((char) => char + char).join("")
-          : normalized;
-
-        return {
-          r: Number.parseInt(value.slice(0, 2), 16),
-          g: Number.parseInt(value.slice(2, 4), 16),
-          b: Number.parseInt(value.slice(4, 6), 16),
-        };
-      }
-
-      function mix(color, target, ratio) {
-        return {
-          r: Math.round(color.r + (target.r - color.r) * ratio),
-          g: Math.round(color.g + (target.g - color.g) * ratio),
-          b: Math.round(color.b + (target.b - color.b) * ratio),
-        };
-      }
-
-      function rgbToCss(color) {
-        return `rgb(${color.r}, ${color.g}, ${color.b})`;
-      }
-
-      function updateCustomThemeColors(hex) {
-        const base = hexToRgb(hex);
-        const light = mix(base, { r: 255, g: 255, b: 255 }, 0.58);
-        const dark = mix(base, { r: 12, g: 18, b: 38 }, 0.52);
-        const shadow = mix(base, { r: 38, g: 18, b: 12 }, 0.35);
-        const glowSide = mix(base, { r: 255, g: 255, b: 255 }, 0.42);
-        const glowBottom = mix(base, { r: 255, g: 255, b: 255 }, 0.16);
-
-        document.documentElement.style.setProperty("--custom-start", rgbToCss(light));
-        document.documentElement.style.setProperty("--custom-mid", rgbToCss(base));
-        document.documentElement.style.setProperty("--custom-end", rgbToCss(dark));
-        document.documentElement.style.setProperty("--custom-shadow", rgbToCss(shadow));
-        document.documentElement.style.setProperty("--custom-glow-side", rgbToCss(glowSide));
-        document.documentElement.style.setProperty("--custom-glow-bottom", rgbToCss(glowBottom));
-      }
 
       function setTheme(theme) {
         activeTheme = theme;
         document.body.classList.toggle("green-mode", theme === "green");
         document.body.classList.toggle("blue-mode", theme === "blue");
-        document.body.classList.toggle("custom-mode", theme === "custom");
-
-        greenThemeButton.textContent = theme === "green" ? "Show Original" : "Go Green";
-        blueThemeButton.textContent = theme === "blue" ? "Show Original" : "Go Blue";
-        customThemeButton.textContent = theme === "custom" ? "Show Original" : "Use My Color";
+        themeToggleButton.textContent = theme === "green" ? "Show Original" : "Go Green";
+        blueThemeToggleButton.textContent = theme === "blue" ? "Show Original" : "Go Blue";
 
         if (theme === "green") {
           status.textContent = "Green gradient mode is active.";
@@ -346,15 +247,8 @@
           return;
         }
 
-        if (theme === "custom") {
-          status.textContent = `Custom color mode is active for ${customColorPicker.value.toUpperCase()}.`;
-          return;
-        }
-
         status.textContent = "Original colorful gradient is active.";
       }
-
-      updateCustomThemeColors(customColorPicker.value);
 
       button.addEventListener("click", () => {
         clickCount += 1;
@@ -364,24 +258,12 @@
             : `Button clicked ${clickCount} times.`;
       });
 
-      greenThemeButton.addEventListener("click", () => {
+      themeToggleButton.addEventListener("click", () => {
         setTheme(activeTheme === "green" ? "default" : "green");
       });
 
-      blueThemeButton.addEventListener("click", () => {
+      blueThemeToggleButton.addEventListener("click", () => {
         setTheme(activeTheme === "blue" ? "default" : "blue");
-      });
-
-      customThemeButton.addEventListener("click", () => {
-        setTheme(activeTheme === "custom" ? "default" : "custom");
-      });
-
-      customColorPicker.addEventListener("input", () => {
-        updateCustomThemeColors(customColorPicker.value);
-
-        if (activeTheme === "custom") {
-          status.textContent = `Custom color mode is active for ${customColorPicker.value.toUpperCase()}.`;
-        }
       });
     </script>
   </body>
