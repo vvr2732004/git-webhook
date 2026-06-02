@@ -15,6 +15,14 @@ from app.integrations.github.bot_detection import is_bot_actor
 from app.integrations.github.normalizers import normalize_github_event
 
 
+def _serialize_dt_utc(value: datetime | None) -> str | None:
+    if value is None:
+        return None
+    if value.tzinfo is None:
+        value = value.replace(tzinfo=UTC)
+    return value.astimezone(UTC).isoformat().replace("+00:00", "Z")
+
+
 def serialize_github_event(model: GitHubEvent) -> dict[str, Any]:
     return {
         "id": model.id,
@@ -25,8 +33,8 @@ def serialize_github_event(model: GitHubEvent) -> dict[str, Any]:
         "actor_login": model.actor_login,
         "actor_type": model.actor_type,
         "is_bot": model.is_bot,
-        "occurred_at": model.occurred_at.astimezone(UTC).isoformat().replace("+00:00", "Z") if model.occurred_at else None,
-        "received_at": model.received_at.astimezone(UTC).isoformat().replace("+00:00", "Z"),
+        "occurred_at": _serialize_dt_utc(model.occurred_at),
+        "received_at": _serialize_dt_utc(model.received_at),
         "normalized_payload": model.normalized_payload,
         "raw_payload": model.raw_payload,
     }

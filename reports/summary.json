@@ -1,26 +1,41 @@
 {
-    "total_events": 37,
+    "total_events": 401,
     "events_by_type": {
+        "board_configuration_changed": 1,
+        "board_created": 1,
+        "check_run": 72,
+        "check_suite": 18,
         "create": 1,
-        "jira:issue_created": 1,
-        "jira:issue_updated": 4,
+        "issuetype_updated": 3,
+        "jira:issue_created": 23,
+        "jira:issue_updated": 44,
         "member": 2,
         "ping": 2,
-        "pull_request": 9,
-        "push": 9,
+        "project_created": 1,
+        "pull_request": 25,
+        "push": 23,
+        "sprint_created": 6,
+        "sprint_deleted": 1,
+        "sprint_started": 3,
+        "sprint_updated": 1,
         "user_created": 3,
-        "user_updated": 6
+        "user_updated": 6,
+        "workflow_job": 108,
+        "workflow_run": 57
     },
     "events_by_repository": {
+        "jira/JT": 15,
         "jira/KAN": 5,
-        "jira/unknown": 9,
+        "jira/SCRUM": 48,
+        "jira/unknown": 25,
         "vvr273/blogging_backend": 1,
-        "vvr273/git-webhook": 22
+        "vvr273/git-webhook": 22,
+        "vvr2732004/git-webhook": 285
     },
     "bot_events": 0,
-    "human_events": 37,
-    "pull_requests_opened": 4,
-    "pull_requests_merged": 3,
-    "pushes": 9,
-    "workflow_runs_completed": 0
+    "human_events": 401,
+    "pull_requests_opened": 7,
+    "pull_requests_merged": 8,
+    "pushes": 23,
+    "workflow_runs_completed": 18
 }
