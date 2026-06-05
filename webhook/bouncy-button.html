@@ -108,6 +108,47 @@
         gap: 1rem;
       }
 
+      .feedback-panel {
+        margin-top: 1.5rem;
+        text-align: left;
+      }
+
+      .feedback-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--text-soft);
+      }
+
+      .feedback-textarea {
+        width: 100%;
+        min-height: 7.5rem;
+        padding: 0.95rem 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        border-radius: 1.2rem;
+        resize: vertical;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--text);
+        font: inherit;
+        line-height: 1.45;
+        box-shadow: inset 0 0.1rem 0.35rem rgba(31, 17, 71, 0.08);
+      }
+
+      .feedback-textarea:focus {
+        outline: 3px solid rgba(96, 165, 250, 0.3);
+        border-color: rgba(37, 99, 235, 0.45);
+      }
+
+      .feedback-meta {
+        margin-top: 0.65rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.75rem;
+        font-size: 0.92rem;
+        color: var(--text-soft);
+      }
+
       h1 {
         margin: 0 0 0.75rem;
         font-size: clamp(1.8rem, 4vw, 2.4rem);
@@ -220,15 +261,57 @@
         <button class="toggle-button" id="themeToggleButton" type="button">Go Green</button>
         <button class="blue-toggle-button" id="blueThemeToggleButton" type="button">Go Blue</button>
       </div>
+      <div class="feedback-panel">
+        <label class="feedback-label" for="feedbackTextarea">Tell us what the button should say</label>
+        <textarea
+          class="feedback-textarea"
+          id="feedbackTextarea"
+          name="feedback"
+          maxlength="180"
+          placeholder="Type a short note and the status message below will reflect it."
+        ></textarea>
+        <div class="feedback-meta">
+          <span id="feedbackHint">Nothing typed yet.</span>
+          <span id="feedbackCount">0 / 180</span>
+        </div>
+      </div>
       <div class="status" id="status">Waiting for the first click.</div>
     </main>
     <script>
       const button = document.getElementById("bounceButton");
       const themeToggleButton = document.getElementById("themeToggleButton");
       const blueThemeToggleButton = document.getElementById("blueThemeToggleButton");
+      const feedbackTextarea = document.getElementById("feedbackTextarea");
+      const feedbackHint = document.getElementById("feedbackHint");
+      const feedbackCount = document.getElementById("feedbackCount");
       const status = document.getElementById("status");
       let clickCount = 0;
       let activeTheme = "default";
+
+      function typedMessage() {
+        return feedbackTextarea.value.trim();
+      }
+
+      function setStatusMessage(baseMessage) {
+        const message = typedMessage();
+        status.textContent = message ? `${baseMessage} Draft note: ${message}` : baseMessage;
+      }
+
+      function updateFeedbackState() {
+        const message = typedMessage();
+        feedbackCount.textContent = `${feedbackTextarea.value.length} / 180`;
+
+        if (!message) {
+          feedbackHint.textContent = "Nothing typed yet.";
+          if (clickCount === 0 && activeTheme === "default") {
+            status.textContent = "Waiting for the first click.";
+          }
+          return;
+        }
+
+        feedbackHint.textContent = `Preview: ${message}`;
+        status.textContent = `Custom note: ${message}`;
+      }
 
       function setTheme(theme) {
         activeTheme = theme;
@@ -238,24 +321,25 @@
         blueThemeToggleButton.textContent = theme === "blue" ? "Show Original" : "Go Blue";
 
         if (theme === "green") {
-          status.textContent = "Green gradient mode is active.";
+          setStatusMessage("Green gradient mode is active.");
           return;
         }
 
         if (theme === "blue") {
-          status.textContent = "Blue gradient mode is active.";
+          setStatusMessage("Blue gradient mode is active.");
           return;
         }
 
-        status.textContent = "Original colorful gradient is active.";
+        setStatusMessage("Original colorful gradient is active.");
       }
 
       button.addEventListener("click", () => {
         clickCount += 1;
-        status.textContent =
+        setStatusMessage(
           clickCount === 1
             ? "Button clicked once."
-            : `Button clicked ${clickCount} times.`;
+            : `Button clicked ${clickCount} times.`,
+        );
       });
 
       themeToggleButton.addEventListener("click", () => {
@@ -265,6 +349,8 @@
       blueThemeToggleButton.addEventListener("click", () => {
         setTheme(activeTheme === "blue" ? "default" : "blue");
       });
+
+      feedbackTextarea.addEventListener("input", updateFeedbackState);
     </script>
   </body>
 </html>
